@@ -29,6 +29,9 @@ Documentation for %{name}.
 %prep
 %setup -q -n %{gem_name}-%{version}
 
+%gemspec_remove_dep -g popen4
+%gemspec_add_dep -g POpen4
+
 %build
 gem build ../%{gem_name}-%{version}.gemspec
 %gem_install
